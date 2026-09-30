@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worth The Calories</title>
+<meta name="description" content="Calorie counters are lying to you. Food scientists aren't. Worth The Calories is coming soon.">
+<link rel="canonical" href="https://worththecalories.fit/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://worththecalories.fit/">
+<meta property="og:title" content="Calorie counters are lying to you. Food scientists aren't.">
+<meta property="og:description" content="Worth The Calories. Coming soon.">
+<meta property="og:image" content="https://worththecalories.fit/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calorie counters are lying to you. Food scientists aren't.">
+<meta name="twitter:description" content="Worth The Calories. Coming soon.">
+<meta name="twitter:image" content="https://worththecalories.fit/assets/og.jpg">
+<meta name="theme-color" content="#18110b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2318110b'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23c9a24e' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%238a2c1f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#18110b;
+  --linen:#ede4d0;
+  --linen-muted:#bcae93;
+  --ochre:#d6a54e;
+  --brass:#a8843f;
+  --oxblood:#8a2c1f;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:var(--ground);color:var(--linen);
+  font-family:"EB Garamond",Garamond,"Times New Roman",serif;
+  font-size:1.2rem;line-height:1.5;
+}
+.bg{position:fixed;inset:0;z-index:-1}
+.bg img{width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.bg::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(24,17,11,.88) 0%,rgba(24,17,11,.62) 40%,rgba(24,17,11,.12) 100%),
+    linear-gradient(0deg,rgba(24,17,11,.7) 0%,rgba(24,17,11,0) 45%);
+}
+main{min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,4vw,56px)}
+.mast{margin:0;font-style:italic;color:var(--linen-muted)}
+h1{
+  font-size:clamp(2.7rem,1.2rem + 6vw,7.6rem);line-height:.98;letter-spacing:-.02em;font-weight:500;
+  margin:0 0 1.5rem;max-width:12ch;text-wrap:balance;
+}
+.soon{font-style:italic;color:var(--ochre);font-size:clamp(1.3rem,1rem + 1vw,1.9rem);margin:0 0 1.5rem}
+form{display:flex;gap:.6rem;flex-wrap:wrap;max-width:34rem}
+input[type=email]{
+  flex:1 1 15rem;font:inherit;font-size:1.15rem;padding:.7rem .9rem;
+  background:rgba(24,17,11,.72);color:var(--linen);border:1px solid var(--brass);border-radius:2px;
+}
+input[type=email]::placeholder{color:var(--linen-muted)}
+.btn{
+  font:inherit;font-size:1.15rem;font-weight:500;background:var(--oxblood);color:var(--linen);
+  border:1px solid var(--ochre);border-radius:2px;padding:.7rem 1.4rem;cursor:pointer;
+}
+.btn:hover{background:#9c3424}
+.fine{font-size:1rem;color:var(--linen-muted);margin:.8rem 0 0;max-width:34rem}
+.share{display:block;margin:1.4rem 0 0;padding:0;background:none;border:0;font:inherit;font-size:1.1rem;font-style:italic;color:var(--ochre);text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
+#thanks{font-size:1.4rem;font-style:italic;border-left:4px solid var(--ochre);padding:.3rem 0 .3rem 1rem;margin:0 0 1rem}
+.credit{margin:0;font-size:.85rem;color:var(--linen-muted);text-align:right}
+.hp{position:absolute;left:-9999px}
+@media (max-width:720px){
+  .bg img{object-position:72% 50%}
+  .bg::after{background:linear-gradient(0deg,rgba(24,17,11,.94) 0%,rgba(24,17,11,.74) 55%,rgba(24,17,11,.25) 100%)}
+  main{justify-content:flex-end;gap:2.5rem}
+  .credit{text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><img src="assets/claesz-2560.jpg" alt=""></div>
+<main>
+  <p class="mast">Worth The Calories</p>
+  <div>
+    <h1>Calorie counters are lying to you. Food scientists aren't.</h1>
+    <p class="soon">Coming soon: a photo of your plate, and a straight verdict.</p>
+    <p id="thanks" role="status" hidden>You're on the list. Eat something good tonight.</p>
+    <form action="https://script.google.com/macros/s/AKfycbwvBmbjEiuh4wOX451l1BBfu5C3ta88Mi2poxx95xUlkVnPk6zrRBL3I5GJepUHKtVp/exec" method="POST">
+      <input type="email" name="email" required autocomplete="email" placeholder="your@email.com" aria-label="Email">
+      <div class="hp" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+      <button class="btn" type="submit">Tell me first</button>
+    </form>
+    <p class="fine" id="err" role="alert" hidden>That didn't go through. Try again in a minute.</p>
+    <p class="fine">One email when it's ready. Nothing else.</p>
+    <button class="share" type="button" id="share" hidden>Send this to your calorie-counting friend</button>
+  </div>
+  <p class="credit"><i>Still Life with a Turkey Pie</i>, Pieter Claesz, 1627. Rijksmuseum, Amsterdam. Public domain.</p>
+</main>
+<script>
+const form = document.querySelector("form");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = form.querySelector("button"), err = document.getElementById("err");
+  btn.disabled = true;
+  err.hidden = true;
+  try {
+    // Apps Script answers 302 once doPost has run; the redirect target 404s now and then, so don't follow it.
+    const r = await fetch(form.action, { method: "POST", body: new FormData(form), redirect: "manual" });
+    if (!r.ok && r.type !== "opaqueredirect") throw new Error(r.status);
+    form.hidden = true;
+    document.getElementById("thanks").hidden = false;
+  } catch {
+    err.hidden = false;
+    btn.disabled = false;
+  }
+});
+const share = document.getElementById("share");
+if (navigator.share) {
+  share.hidden = false;
+  share.onclick = () => navigator.share({ title: document.title, text: document.querySelector("h1").textContent, url: location.href }).catch(() => {});
+}
+</script>
+</body>
+</html>
