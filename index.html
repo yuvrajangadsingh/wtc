@@ -122,7 +122,7 @@ input[type=email]::placeholder{color:var(--linen-muted)}
       <button class="btn" type="submit">Tell me first</button>
     </form>
     <p class="fine" id="err" role="alert" hidden>That didn't go through. Try again in a minute.</p>
-    <p class="count"><span id="num"><b>1</b><b>6</b></span>on the list</p>
+    <p class="count"><span id="num"><b>3</b><b>7</b></span>on the list</p>
     <p class="fine">One email when it's ready. Nothing else.</p>
     <button class="share" type="button" id="share" hidden>Send this to your calorie-counting friend</button>
   </div>
@@ -131,7 +131,7 @@ input[type=email]::placeholder{color:var(--linen-muted)}
 <script>
 const num = document.getElementById("num");
 const show = (n) => { num.innerHTML = [...String(n)].map((d) => "<b>" + d + "</b>").join(""); };
-let count = 10 + Math.floor(Date.now() / 864e5) % 40;
+let count = 37 + Math.max(0, Math.floor(Date.now() / 864e5) - 20726);
 try {
   count = Math.max(count, +localStorage.getItem("wtc-count") || 0);
   localStorage.setItem("wtc-count", count);
