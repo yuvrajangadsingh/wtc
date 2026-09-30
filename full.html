@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worth The Calories | Coming soon</title>
+<meta name="description" content="We're building an app that turns a photo of your dish into an honest calorie range, the ingredients worth knowing about, and a straight verdict on whether it's worth it. Join the waitlist.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://worththecalories.fit/">
+<link rel="canonical" href="https://worththecalories.fit/">
+<meta property="og:title" content="Worth The Calories | Coming soon">
+<meta property="og:description" content="We're building an app that turns a photo of your dish into an honest calorie range, the ingredients worth knowing about, and a straight verdict on whether it's worth it. Join the waitlist.">
+<meta property="og:image" content="https://worththecalories.fit/assets/claesz-turkey-pie.jpg">
+<meta property="og:image:alt" content="Still Life with a Turkey Pie by Pieter Claesz, 1627: a laid table with a turkey pie, oysters, bread, fruit and a silver jug.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Worth The Calories | Coming soon">
+<meta name="twitter:description" content="We're building an app that turns a photo of your dish into an honest calorie range, the ingredients worth knowing about, and a straight verdict on whether it's worth it. Join the waitlist.">
+<meta name="twitter:image" content="https://worththecalories.fit/assets/claesz-turkey-pie.jpg">
+<meta name="theme-color" content="#18110b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2318110b'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23c9a24e' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%238a2c1f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#18110b;      /* umber black, the painting's wall */
+  --panel:#231911;
+  --linen:#ede4d0;       /* tablecloth */
+  --linen-muted:#bcae93;
+  --ochre:#d6a54e;
+  --brass:#a8843f;
+  --oxblood:#8a2c1f;
+  --ink:#2a1c12;         /* text on paper */
+  --ink-muted:#5c4633;
+  --paper:#efe6d1;
+  --measure:40rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--linen);
+  font-family:"EB Garamond",Garamond,"Times New Roman",serif;
+  font-size:1.1875rem;line-height:1.6;
+  font-variant-numeric:oldstyle-nums proportional-nums;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--ochre);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+h1,h2,h3,h4{font-weight:500;line-height:1.15;margin:0}
+p{margin:0 0 1em}
+.wrap{max-width:56rem;margin:0 auto;padding-left:16px;padding-right:16px}
+.col{max-width:var(--measure);margin-inline:auto}
+.report,.signup,.steps,.founder,.label,footer p{margin-inline:auto}
+section{padding-top:4.5rem}
+h2{font-size:clamp(1.9rem,1.4rem + 2vw,2.75rem);margin-bottom:1.25rem;letter-spacing:-.005em}
+.lede{color:var(--linen-muted)}
+.small{font-size:1rem;line-height:1.5}
+
+/* hero */
+.mast{padding-top:1.25rem;font-style:italic;color:var(--linen-muted);font-size:1.05rem}
+.hero{padding-top:3rem}
+.hero h1{
+  font-size:clamp(2.7rem,1.6rem + 5.2vw,5.6rem);
+  line-height:1.02;letter-spacing:-.02em;font-weight:500;max-width:14ch;margin-bottom:1.5rem;text-wrap:balance;
+}
+.hero .sub{font-size:clamp(1.2rem,1.1rem + .4vw,1.4rem);max-width:34rem}
+.btn{
+  display:inline-block;font:inherit;font-size:1.15rem;font-weight:500;
+  background:var(--oxblood);color:var(--linen);text-decoration:none;
+  padding:.7rem 1.5rem;border:1px solid var(--ochre);border-radius:2px;cursor:pointer;
+}
+.btn:hover{background:#9c3424}
+.frame{
+  margin:3.5rem 0 0;padding:clamp(6px,1.2vw,14px);
+  background:linear-gradient(135deg,#6e5325,#c9a24e 30%,#7a5c28 55%,#b38d42 80%,#5c441e);
+  box-shadow:0 30px 60px -20px #000;
+}
+.frame img{width:100%;aspect-ratio:1600/891;object-fit:cover}
+.label{margin:1rem 0 0;font-size:.95rem;line-height:1.45;color:var(--linen-muted)}
+.label i{color:var(--linen)}
+
+/* sources lists */
+.refs{margin:1.5rem 0 0;padding:0 0 0 1.1rem;font-size:1rem;line-height:1.45;color:var(--linen-muted)}
+.refs li{margin:.35rem 0}
+
+/* sample report */
+.report{
+  background:var(--paper);color:var(--ink);border-radius:3px;
+  padding:clamp(1.25rem,4vw,3rem);margin-top:2rem;max-width:56rem;
+  box-shadow:0 24px 50px -24px #000;
+}
+.report a{color:var(--oxblood)}
+.report h3{font-size:clamp(1.6rem,1.3rem + 1.4vw,2.2rem)}
+.report h4{font-style:italic;font-weight:500;font-size:1.25rem;margin:2rem 0 .6rem;color:var(--oxblood)}
+.report .serving{color:var(--ink-muted);margin:.6rem 0 0}
+.kcal{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid #cdbf9f}
+.kcal .big{margin:0;font-size:clamp(2.4rem,2rem + 2vw,3.4rem);line-height:1;font-weight:500;font-variant-numeric:lining-nums}
+.kcal .big span{font-size:.45em;font-style:italic;font-weight:400;color:var(--ink-muted)}
+.kcal .range{margin:.4rem 0 0}
+.bar{position:relative;height:14px;margin:1.4rem 0 .4rem;background:#dccfb2;border-radius:7px}
+.bar .span{position:absolute;top:0;bottom:0;left:32.5%;width:47.5%;background:#c99552;border-radius:7px}
+.bar .est{position:absolute;top:-6px;bottom:-6px;left:62.5%;width:3px;margin-left:-1.5px;background:var(--oxblood)}
+.ticks{display:flex;justify-content:space-between;font-size:.9rem;color:var(--ink-muted);font-variant-numeric:lining-nums}
+.method{font-size:1rem;line-height:1.5;color:var(--ink-muted);margin:1rem 0 0}
+.report ul{margin:0;padding-left:1.1rem}
+.report li{margin:.45rem 0}
+.report .notable{list-style:none;padding:0}
+.notable li{margin:0 0 1rem}
+.notable b{font-weight:600}
+.notable .src{display:block;font-size:.95rem}
+.verdict{margin-top:2rem;padding:1.25rem 1.25rem 1rem;border-left:4px solid var(--oxblood);background:#e6dbc2}
+.report .verdict h4{margin-top:0}
+.verdict .line{font-size:1.4rem;line-height:1.3;font-style:italic;margin-bottom:.75rem}
+.verdict p:last-child{margin:0}
+.report .refs{color:var(--ink-muted);font-size:.95rem;margin-top:0}
+
+/* disagreements */
+.fights{display:grid;gap:1.5rem;margin-top:2rem}
+.fight{background:var(--panel);border:1px solid #4a3822;border-radius:3px;padding:clamp(1.25rem,3vw,2.25rem)}
+.fight h3{font-size:clamp(1.35rem,1.2rem + .8vw,1.75rem);max-width:36ch}
+.fight .food{font-style:italic;color:var(--linen-muted);margin:.4rem 0 1.5rem}
+.sides{display:grid;gap:1.25rem}
+.side{border-top:1px solid var(--brass);padding-top:.9rem}
+.side p:last-child{margin:0}
+.side .who{font-weight:600;margin-bottom:.35rem}
+.side .when{display:block;font-weight:400;font-size:.95rem;color:var(--linen-muted)}
+.research{margin-top:1.75rem;padding:1.25rem;background:#2d2117;border-radius:2px}
+.research h4{font-size:1.2rem;font-style:italic;margin-bottom:.6rem}
+.conf{display:inline-block;margin-bottom:.8rem;padding:.1rem .6rem;border:1px solid var(--ochre);border-radius:2px;font-size:1rem}
+.conf.strong{background:var(--ochre);color:var(--ground)}
+.research .refs{margin-top:.25rem}
+.note{font-style:italic;color:var(--linen-muted)}
+
+/* steps: a real sequence, so numbered */
+.steps{margin:2rem 0 0;padding:0;list-style:none;counter-reset:s;display:grid;gap:1.75rem;max-width:44rem}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;align-items:baseline}
+.step{margin:0}
+.steps li::before{content:counter(s);font-size:2.4rem;line-height:1;color:var(--ochre)}
+.price{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem;max-width:36rem}
+.price li{display:grid;grid-template-columns:8rem 1fr;gap:1rem;align-items:baseline;border-top:1px solid var(--brass);padding-top:.8rem}
+.price b{font-size:1.6rem;font-weight:500;color:var(--ochre);font-variant-numeric:lining-nums;line-height:1.1}
+
+/* signup */
+.signup{background:var(--panel);border:1px solid #4a3822;border-radius:3px;padding:clamp(1.25rem,4vw,2.75rem);max-width:42rem}
+.field{margin:0 0 1.25rem}
+.field label,legend{display:block;font-weight:500;margin-bottom:.4rem;padding:0}
+input[type=email]{
+  width:100%;font:inherit;color:var(--linen);background:var(--ground);
+  border:1px solid var(--linen-muted);border-radius:2px;padding:.6rem .75rem;
+}
+fieldset{border:0;padding:0;margin:0 0 1.5rem;min-width:0}
+.radio{display:flex;align-items:center;gap:.6rem;margin:.3rem 0}
+.radio input{width:1.15rem;height:1.15rem;accent-color:var(--ochre);margin:0}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.fine{margin:1.25rem 0 0;font-size:1rem;line-height:1.5;color:var(--linen-muted)}
+.fine + .fine{margin-top:.5rem}
+#thanks{font-size:1.35rem;line-height:1.4;font-style:italic;border-left:4px solid var(--ochre);padding:.5rem 0 .5rem 1rem;margin:1.5rem 0 0}
+
+.founder{margin:0;font-size:clamp(1.3rem,1.15rem + .6vw,1.6rem);line-height:1.45;font-style:italic;max-width:36rem}
+footer{margin-top:5rem;padding-top:2rem;padding-bottom:3rem;border-top:1px solid #3b2d1c;color:var(--linen-muted);font-size:1rem;line-height:1.5}
+footer p{max-width:var(--measure)}
+footer .close{color:var(--linen);font-size:1.2rem;font-style:italic;margin-top:1.5rem}
+
+@media (min-width:720px){
+  section{padding-top:6.5rem}
+  .sides{grid-template-columns:1fr 1fr;gap:2rem}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+}
+@media (min-width:1100px){
+  .wrap{max-width:none;padding-inline:clamp(32px,6vw,160px)}
+  .col,.report,.signup,.steps,.founder,.label,footer p{margin-inline:0}
+  .hero{display:grid;grid-template-columns:minmax(28rem,5fr) 7fr;column-gap:clamp(2rem,5vw,6rem);align-items:center}
+  .hero .col{grid-column:1;grid-row:1;max-width:none}
+  .hero .frame{grid-column:2;grid-row:1;margin-top:0}
+  .hero .label{grid-column:2}
+  .hero h1{font-size:clamp(3rem,1rem + 4.2vw,7rem);max-width:none}
+  .hero .sub{max-width:44rem}
+  section[aria-labelledby="problem"] .col{max-width:none;column-count:2;column-gap:4rem}
+  section[aria-labelledby="problem"] h2,section[aria-labelledby="problem"] .refs{column-span:all}
+  section[aria-labelledby="sample"]{display:grid;grid-template-columns:2fr 3fr;column-gap:clamp(2rem,5vw,6rem);align-items:start}
+  section[aria-labelledby="sample"] .report{max-width:none;margin-top:0}
+  .fights{grid-template-columns:repeat(auto-fit,minmax(36rem,1fr));gap:2rem}
+  .steps{max-width:none;grid-template-columns:repeat(3,1fr);gap:3rem}
+  #signup{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(2rem,5vw,6rem);align-items:start}
+  #signup .signup{max-width:none}
+  .founder{max-width:none;font-size:clamp(1.6rem,1.2rem + 1vw,2.4rem)}
+}
+</style>
+</head>
+<body>
+<header class="wrap mast">Worth The Calories</header>
+
+<main>
+<section class="hero wrap" aria-labelledby="top">
+  <div class="col">
+  <h1 id="top">Calorie counters are lying to you. The lab tests aren't.</h1>
+  <p class="sub">We're building an app that turns a photo of your dish into a calorie range, the ingredients worth knowing about, and a straight answer on whether it's worth it.</p>
+  <a class="btn" href="#signup">Join the waitlist</a>
+  </div>
+
+  <figure class="frame">
+    <img src="assets/claesz-turkey-pie.jpg" width="1600" height="891" alt="A laid table in oil paint: a cut turkey pie with the bird's feathers set on top, oysters on a pewter plate, a sliced lemon, bread rolls, olives, a glass of white wine, a silver jug and a porcelain bowl of grapes and apples.">
+  </figure>
+  <p class="label"><i>Still Life with a Turkey Pie</i>, Pieter Claesz, 1627. Rijksmuseum, Amsterdam. Public domain, via <a href="https://commons.wikimedia.org/wiki/File:Pieter_Claesz._-_Stilleven_met_kalkoenpastei_-_Google_Art_Project.jpg">Wikimedia Commons</a>.</p>
+</section>
+
+<section class="wrap" aria-labelledby="problem">
+  <div class="col">
+    <h2 id="problem">The number is fuzzier than it looks</h2>
+    <p>A US food label that says 500 calories can test at close to 600 and still pass the FDA's check, which treats calories as misbranded only when a composite lab sample comes in more than 20% over the label. Restaurant menus do fine on average, but when a lab tested 269 dishes from 42 restaurants, one in five came in at least 100 calories over the menu, and the lighter dishes were the ones most likely to run over.</p>
+    <p>Then you try to log it. USDA's own database lists 'one naan' at 262 calories in one entry (a 90 g, 3 oz piece) and 550 in another (a 10 inch, 177 g, 6 oz naan). A 2024 Australian study of apps sold in Australia found manual logging apps missed Asian meals by about 360 calories on average, and AI photo estimates were off too, with the authors flagging mixed dishes as the weak spot. A curry is a mixed dish. So a single number, stated to the calorie, is false precision. A range with its assumptions written out is the honest version, and that's what we're building.</p>
+    <ul class="refs" aria-label="Sources for this section">
+      <li><a href="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9">US FDA, 21 CFR 101.9(g)(5)</a>, the 20% rule for packaged food labels</li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/21771989/">Urban et al., JAMA 2011</a>, 50 of 269 restaurant items at least 100 kcal over</li>
+      <li>USDA FoodData Central, <a href="https://fdc.nal.usda.gov/food-details/171845/nutrients">naan, 90 g piece</a> (about 262 kcal) and <a href="https://fdc.nal.usda.gov/food-details/2707613/nutrients">naan, 10 inch, 177 g</a> (about 550 kcal)</li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/39125452/">Li et al., Nutrients 2024</a>, Australian study of apps in Australian app stores, Asian meals underestimated by a mean 1,520 kJ, about 363 kcal</li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="sample">
+  <div class="col">
+    <h2 id="sample">One sample report, shown in full</h2>
+    <p class="note small">A concept, put together by hand from the sources below. The app isn't available yet, and nothing here shows it can do this from a photo.</p>
+    <p class="lede">Butter chicken with one naan, as served at an Indian restaurant. Our estimate is around 1,250 calories, with sourced scenarios from 650 to 1,600 and every assumption written down: the sauce, the naan, the portion, the butter. Sodium and saturated fat get their own notes. And a verdict: worth it, as the whole evening's meal. This is the shape every report will take.</p>
+  </div>
+
+  <article class="report" aria-labelledby="dish">
+    <h3 id="dish">Butter chicken with one naan, restaurant serving</h3>
+    <p class="serving">One restaurant entree of butter chicken (roughly 450 to 750 g, 16 to 26 oz, with sauce) plus one plain naan, as ordered at an Indian restaurant. Rice not included.</p>
+
+    <div class="kcal">
+      <p class="big">about 1,250 <span>calories</span></p>
+      <p class="range">Illustrative scenarios 650 to 1,600</p>
+      <div class="bar" role="img" aria-label="Illustrative calorie scenarios from 650 to 1,600 on a scale of 0 to 2,000, with the estimate at about 1,250">
+        <div class="span"></div><div class="est"></div>
+      </div>
+      <div class="ticks" aria-hidden="true"><span>0</span><span>500</span><span>1,000</span><span>1,500</span><span>2,000</span></div>
+      <p class="method"><i>How we got there.</i> Anchored on a US Indian chain's printed values for butter chicken plus a classic naan (896 + 379 = 1,275 kcal), The high scenario comes from lab-measured chicken tikka masala meals from US restaurants (1,365 +/- 250 kcal), a different dish, measured with its sides and as gross energy. The low scenario is a USDA-listed 255 g (9 oz) supermarket butter chicken tray plus a 90 g USDA naan (about 660 kcal), a smaller portion than the serving above.</p>
+    </div>
+
+    <div class="two">
+      <div>
+        <h4>What swings it</h4>
+        <ul>
+          <li>Sauce base: a curry with no cream or butter comes in at 107 kcal per 100 g in USDA's survey data, while a butter chicken made with cream, butter and yogurt lists 157 kcal per 100 g, about 47% more for the same spoonful.</li>
+          <li>Naan size and style: USDA lists one plain naan at 262 kcal (90 g piece) or 550 kcal (a 10 inch, 177 g naan), and the same US chain that lists a 379 kcal classic naan lists its stuffed Peshawari naan at 674 kcal.</li>
+          <li>Portion: lab-measured tikka masala meals in the same study averaged 548 g (19 oz) in San Francisco and 752 g (27 oz) in Boston, so the plate you get can be a third bigger depending on where you order.</li>
+          <li>Butter and oil finish: the chain's butter chicken carries 56 g of fat, more than half its calories, so a heavier or lighter hand with butter and cream moves the total more than anything else in the sauce.</li>
+          <li>How much sauce you mop up with the naan: the butter and cream are in the gravy, so how much of it you eat moves the total.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>What we don't know</h4>
+        <ul>
+          <li>As of September 2026 we found no US chain that publishes butter chicken and naan together with gram weights. The best US menu source is a 2016 Tiffin Indian Cuisine PDF, calculated with food-service software rather than measured, and it gives no portion weights. The 1,275 kcal pairing is our sum of two separate rows.</li>
+          <li>We found no restaurant butter chicken in USDA FoodData Central. The closest entries are a generic 'Chicken curry' (no cream or butter in it) and a packaged supermarket butter chicken tray from Deep Foods, neither of which is a restaurant plate.</li>
+          <li>We found no US lab study that measured butter chicken itself. The closest measured dish is chicken tikka masala (Urban et al. 2016), reported as gross energy for the entree plus its accompanying sides, which reads somewhat higher than the calories your body actually absorbs. The paper does not say per meal whether those sides were rice, naan or both.</li>
+          <li>Sugar in the sauce is a wide open question: the chain lists 29 g for its butter chicken while the packaged tray works out to about 2 g, and we can't tell which is closer to a typical restaurant.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>Worth knowing</h4>
+    <ul class="notable">
+      <li><b>Sodium.</b> The chain's 2016 values for butter chicken plus classic naan come to about 2,440 mg of sodium, about 106% of the FDA Daily Value of 2,300 mg, in one dinner.
+        <a class="src" href="https://www.tiffin.com/tiffinindiancuisinenutritioninformation.pdf">Tiffin Indian Cuisine nutrition information (2016)</a>, <a class="src" href="https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels">FDA Daily Values</a></li>
+      <li><b>Saturated fat from cream and butter.</b> The chain's 2016 values list 56 g of fat and 25 g of saturated fat in the butter chicken alone, 125% of the FDA Daily Value of 20 g before the naan, which lines up with the cream, butter and canola oil in USDA's listed butter chicken ingredients; that richness is most of what you are paying for.
+        <a class="src" href="https://www.tiffin.com/tiffinindiancuisinenutritioninformation.pdf">Tiffin Indian Cuisine nutrition information (2016)</a></li>
+      <li><b>Protein.</b> The butter chicken carries 38 g of protein and the classic naan adds 14 g, so this plate has real protein, not just sauce and bread.
+        <a class="src" href="https://www.tiffin.com/tiffinindiancuisinenutritioninformation.pdf">Tiffin Indian Cuisine nutrition information (2016)</a></li>
+      <li><b>Sugar in the sauce.</b> Restaurant butter chicken sauce can be sweet: the chain lists 29 g of sugar for the dish, versus about 2 g in a 255 g packaged tray, so sweetness varies a lot by kitchen.
+        <a class="src" href="https://fdc.nal.usda.gov/food-details/2560191/nutrients">USDA FoodData Central, Deep Foods butter chicken (fdcId 2560191)</a></li>
+    </ul>
+
+    <div class="verdict">
+      <h4>Verdict</h4>
+      <p class="line">Worth it, as the whole evening's meal rather than a side act, if it fits your day.</p>
+      <p>At around 1,250 calories you are getting a rich plate with a real hit of protein, and the cream and butter are exactly why it tastes the way it does. If you want it to go further, split the naan or leave some sauce in the bowl, but ordering it and enjoying it is the point. If you are watching sodium or saturated fat for a health reason, this plate is a lot of both.</p>
+    </div>
+
+    <h4>Sources</h4>
+    <ul class="refs">
+      <li><a href="https://www.tiffin.com/tiffinindiancuisinenutritioninformation.pdf">Tiffin Indian Cuisine nutrition information PDF (US chain, effective June 1, 2016)</a></li>
+      <li><a href="https://escholarship.org/content/qt22k3z8b1/qt22k3z8b1.pdf">Urban et al. 2016, J Acad Nutr Diet, energy in frequently ordered US restaurant meals</a></li>
+      <li><a href="https://fdc.nal.usda.gov/food-details/2560191/nutrients">USDA FoodData Central, 'Butter chicken' by Deep Foods Inc. (fdcId 2560191)</a></li>
+      <li><a href="https://fdc.nal.usda.gov/food-details/2706437/nutrients">USDA FoodData Central, 'Chicken curry' (fdcId 2706437)</a></li>
+      <li><a href="https://fdc.nal.usda.gov/food-details/2707613/nutrients">USDA FoodData Central, 'Bread, naan' (fdcId 2707613)</a></li>
+      <li><a href="https://fdc.nal.usda.gov/food-details/171845/nutrients">USDA FoodData Central, 'Bread, naan, plain, commercially prepared' (fdcId 171845)</a></li>
+    </ul>
+  </article>
+</section>
+
+<section class="wrap" aria-labelledby="fights">
+  <div class="col">
+    <h2 id="fights">Five food questions the loud voices fight about</h2>
+    <p class="lede">Seed oils, diet soda, raw milk, fasting, whole wheat. For each one we lined up two well-known nutrition voices who disagree, then went to the published research to see who it backs and how firmly. Sometimes the answer is 'leans one way, not settled.' We say so. Where the research is uncertain, the card says uncertain.</p>
+    <p class="lede">Ten logged so far, from Layne Norton, Paul Saladino, Mark Hyman, Eric Berg, Gil Carvalho and others. Five below, with receipts.</p>
+    <p class="note small">Independent summaries of public statements. Sources linked. No affiliation or endorsement.</p>
+  </div>
+
+  <div class="fights">
+    <article class="fight" aria-labelledby="f1">
+      <h3 id="f1">Are seed oils (soybean, canola, safflower) harmful, or fine in place of saturated fat?</h3>
+      <p class="food">Seed oils (soybean, canola, corn, safflower)</p>
+      <div class="sides">
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=IWCck4-_FhQ">Paul Saladino</a> says <span class="when">Oct 2025 (upload date)</span></p>
+          <p>Says controlled human studies show that the excess linoleic acid from seed oils is harmful (more LDL oxidation, oxidative stress, inflammation, weaker mitochondrial function), and that people should limit polyunsaturated fats and put animal fats first.</p>
+        </div>
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=8ETN1lmMve4">Layne Norton</a> says <span class="when">Apr 2025 (upload date)</span></p>
+          <p>Cites a 7-week randomized trial in which safflower oil (a seed oil that is mostly linoleic acid) lowered inflammation markers. He says linoleic acid does not raise arachidonic acid or prostaglandins, and he names Saladino as the source of the opposing claim.</p>
+        </div>
+      </div>
+      <div class="research">
+        <h4>What the research says</h4>
+        <p class="conf">Confidence: moderate</p>
+        <p>On heart disease and death, the evidence leans toward Norton, but it is not settled. An AHA review of trials found that swapping saturated fat for polyunsaturated vegetable oil cut cardiovascular disease by about 30%. A 2025 study that followed 221,054 US adults for up to 33 years found that people who ate the most plant oil had 16% lower death rates, and those who ate the most butter had 15% higher death rates. That study is observational, so it shows a link and not proof of cause. On the other side, recovered data from the 1968-73 Minnesota Coronary Experiment showed that corn oil lowered cholesterol but did not lower deaths. The 2025-2030 US Dietary Guidelines say more research is needed on which fats are best. They name olive oil first, list butter or beef tallow as other options, and keep saturated fat under 10% of calories. None of these sources tests Saladino's specific claims about oxidation and inflammation.</p>
+        <ul class="refs">
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/28620111/">Dietary Fats and Cardiovascular Disease: A Presidential Advisory From the American Heart Association (Sacks et al., Circulation 2017)</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/40048719/">Butter and Plant-Based Oils Intake and Mortality (Zhang et al., JAMA Internal Medicine 2025)</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/27071971/">Re-evaluation of the traditional diet-heart hypothesis: recovered data from the Minnesota Coronary Experiment (Ramsden et al., BMJ 2016)</a></li>
+          <li><a href="https://cdn.realfood.gov/DGA.pdf">Dietary Guidelines for Americans, 2025-2030 (HHS/USDA, Jan 2026)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fight" aria-labelledby="f2">
+      <h3 id="f2">Do artificial sweeteners (diet soda, aspartame, sucralose) make you gain weight, or help you lose it?</h3>
+      <p class="food">Artificial (low-calorie) sweeteners and diet soda</p>
+      <div class="sides">
+        <div class="side">
+          <p class="who"><a href="https://drhyman.com/blogs/content/why-you-should-ditch-artificial-sweeteners">Mark Hyman</a> says <span class="when">Dec 2015</span></p>
+          <p>Says artificial sweeteners can be as bad as regular sugar or even worse, and tells readers to stop using them.</p>
+        </div>
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=UYH1WEBNS8o">Layne Norton</a> says <span class="when">Feb 2025 (upload date)</span></p>
+          <p>Says artificial sweeteners do not make people fat. His argument is that in randomized trials, people who replace sugar with sweeteners lose weight, and that the link seen in observational studies comes from poorer overall diet quality.</p>
+        </div>
+      </div>
+      <div class="research">
+        <h4>What the research says</h4>
+        <p class="conf">Confidence: moderate</p>
+        <p>On weight, the trials back Norton. A review of 29 trials (2,267 people) found that people who swapped sugar for low-calorie sweeteners lost about 1 kg (2.2 lb) more than those who kept eating sugar. Compared with water, sweeteners made no difference to weight. Long-term safety is a separate question and it is not settled. The FDA says the sweeteners it has authorized are safe for the general population within the acceptable daily intake it sets for each one, and aspartame must carry a warning for people with PKU, who cannot process phenylalanine. The AHA (2018) said sweetened diet drinks may help adults who usually drink sugary ones, but it found little data on possible harms and advised against children drinking them for long periods. The 2025-2030 US Dietary Guidelines go further: they say no amount of non-nutritive sweeteners is recommended and advise limiting them. So current US guidance agrees with Hyman's advice to limit sweeteners, though advice to limit them is not a finding that they are toxic, and the trials do not support his claim that they are as bad as sugar for weight.</p>
+        <ul class="refs">
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/33168917/">The effects of low-calorie sweeteners on energy intake and body weight: a systematic review and meta-analyses of sustained intervention studies (Rogers and Appleton, Int J Obes 2021)</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/30354445/">Low-Calorie Sweetened Beverages and Cardiometabolic Health: A Science Advisory From the American Heart Association (Johnson et al., Circulation 2018)</a></li>
+          <li><a href="https://www.fda.gov/food/food-additives-petitions/aspartame-and-other-sweeteners-food">FDA: Aspartame and Other Sweeteners in Food</a></li>
+          <li><a href="https://www.law.cornell.edu/cfr/text/21/172.804">21 CFR 172.804</a>, the aspartame label warning for people with PKU</li>
+          <li><a href="https://cdn.realfood.gov/DGA.pdf">Dietary Guidelines for Americans, 2025-2030 (HHS/USDA, Jan 2026)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fight" aria-labelledby="f3">
+      <h3 id="f3">Raw (unpasteurized) milk: health food or food-safety risk?</h3>
+      <p class="food">Raw milk</p>
+      <div class="sides">
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=Ya-P2K5k6PY">Paul Saladino</a> says <span class="when">Nov 2025 (upload date)</span></p>
+          <p>Says raw milk has been wrongly vilified, has many benefits for humans, and is, going by anecdote, easier to tolerate than pasteurized dairy.</p>
+        </div>
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=9o0wIus2keA">Layne Norton</a> says <span class="when">Nov 2025 (upload date)</span></p>
+          <p>Says raw milk is not a health food. In his view it has no proven health benefit and carries a much higher risk of foodborne illness, while pasteurization's main cost is a small loss of some vitamins.</p>
+        </div>
+      </div>
+      <div class="research">
+        <h4>What the research says</h4>
+        <p class="conf strong">Confidence: strong</p>
+        <p>The evidence on risk is strong, and none of it shows an extra benefit from raw milk. The FDA says pasteurization kills the germs in raw milk without any significant impact on its nutritional quality. The FDA counts at least 133 US outbreaks linked to raw milk from 1987 to 2010, with 2,659 illnesses, 269 hospital stays and 3 deaths. US outbreak data from 1993 to 2006 show that, per amount consumed, unpasteurized dairy caused about 150 times more outbreaks than pasteurized dairy. Outbreaks rose from 30 in 2007-2009 to 51 in 2010-2012, and 81% of them involved milk bought in states where selling it was legal. None of these sources directly tests Saladino's claim that raw milk is easier to tolerate, which he himself calls anecdotal.</p>
+        <ul class="refs">
+          <li><a href="https://www.fda.gov/food/buy-store-serve-safe-food/raw-milk-misconceptions-and-danger-raw-milk-consumption">Raw Milk Misconceptions and the Danger of Raw Milk Consumption (FDA)</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/22377202/">Nonpasteurized dairy products, disease outbreaks, and state laws, United States, 1993-2006 (Langer et al., Emerging Infectious Diseases 2012)</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/25531403/">Increased outbreaks associated with nonpasteurized milk, United States, 2007-2012 (Mungai et al., Emerging Infectious Diseases 2015)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fight" aria-labelledby="f4">
+      <h3 id="f4">Is intermittent fasting a special tool for weight loss, or just another way to eat less?</h3>
+      <p class="food">Intermittent fasting (time-restricted eating, alternate-day fasting)</p>
+      <div class="sides">
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=xF0OJh19Ubw">Eric Berg</a> says <span class="when">Nov 2021 (upload date)</span></p>
+          <p>Calls intermittent fasting the most powerful tool for healthy weight loss. The video description also claims it raises growth hormone by 2000% and testosterone by 180%.</p>
+        </div>
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=pyuyakz6leo">Gil Carvalho (Nutrition Made Simple!)</a> says <span class="when">Feb 2022 (upload date)</span></p>
+          <p>Says that when calories are matched, intermittent fasting works no better than simply eating fewer calories, so it has no special fat-loss effect.</p>
+        </div>
+      </div>
+      <div class="research">
+        <h4>What the research says</h4>
+        <p class="conf">Confidence: moderate</p>
+        <p>The trials back Carvalho. In a 12-month trial in Chicago, people on alternate-day fasting lost about the same weight as people on daily calorie cutting (6.0% vs 5.3%), and more of the fasting group dropped out (38% vs 29%). In a 12-week US trial, 116 adults eating in an 8-hour window lost no more weight than people eating three regular meals. The difference was 0.26 kg (about 0.6 lb) and was not significant. A 2025 review of 99 trials found that only alternate-day fasting beat plain calorie cutting, by about 1.3 kg (2.8 lb), and in trials that lasted 24 weeks or longer, no fasting method beat calorie cutting. So 'most powerful' is not supported. Fasting works about as well as other ways of eating less. None of these sources tests Berg's hormone numbers.</p>
+        <ul class="refs">
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/28459931/">Effect of Alternate-Day Fasting on Weight Loss, Weight Maintenance, and Cardioprotection Among Metabolically Healthy Obese Adults (Trepanowski et al., JAMA Internal Medicine 2017)</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/32986097/">Effects of Time-Restricted Eating on Weight Loss and Other Metabolic Parameters: The TREAT Randomized Clinical Trial (Lowe et al., JAMA Internal Medicine 2020)</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/40533200/">Intermittent fasting strategies and their effects on body weight and other cardiometabolic risk factors: network meta-analysis (Semnani-Azad et al., BMJ 2025)</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fight" aria-labelledby="f5">
+      <h3 id="f5">Are whole grains and whole wheat bread actually healthy?</h3>
+      <p class="food">Whole grains and whole wheat bread</p>
+      <div class="sides">
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=1e015eLi4lM">Eric Berg</a> says <span class="when">Dec 2022 (upload date)</span></p>
+          <p>Says 'healthy whole grains' are not really healthy. He claims whole wheat flour, like refined flour, has little fiber, vitamins, minerals or protein, and that the phytic acid in whole grains blocks mineral absorption.</p>
+        </div>
+        <div class="side">
+          <p class="who"><a href="https://www.youtube.com/watch?v=gHZ5Z6qHKMs">Layne Norton</a> says <span class="when">Jul 2022 (upload date)</span></p>
+          <p>Says eating whole grains is linked to lower cardiovascular disease and type 2 diabetes risk and does not raise inflammation. His video title calls it a debunk of Berg. It was posted in Jul 2022, before Berg's Dec 2022 video, so it answers an earlier Berg video.</p>
+        </div>
+      </div>
+      <div class="research">
+        <h4>What the research says</h4>
+        <p class="conf">Confidence: moderate</p>
+        <p>The evidence leans toward Norton, but it is not settled. Long-term studies that follow people favor him: across 45 studies, each extra 90 g (about 3 oz) of whole grains a day went with 22% lower cardiovascular disease and 17% lower death from any cause. These studies are observational, so they show a link and not proof of cause. The trial evidence is thin, though. A Cochrane review found only 9 short trials (1,414 people, none longer than 16 weeks), none of which measured heart attacks or deaths, and the evidence on cholesterol was low quality. Thin trials do not make Berg's claims true. The 2025-2030 US Dietary Guidelines still say to prioritize fiber-rich whole grains (2 to 4 servings a day) and to cut white bread. These sources did not check Berg's claims about how much fiber and nutrients whole wheat flour contains.</p>
+        <ul class="refs">
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/27301975/">Whole grain consumption and risk of cardiovascular disease, cancer, and all cause and cause specific mortality (Aune et al., BMJ 2016)</a></li>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/28836672/">Whole grain cereals for the primary or secondary prevention of cardiovascular disease (Kelly et al., Cochrane 2017)</a></li>
+          <li><a href="https://cdn.realfood.gov/DGA.pdf">Dietary Guidelines for Americans, 2025-2030 (HHS/USDA, Jan 2026)</a></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="how">
+  <h2 id="how">How it will work</h2>
+  <ol class="steps">
+    <li><p class="step">Take a photo. Snap the plate in front of you, at a restaurant, out of a takeout box, or in your own kitchen. We're building the part that works out what it's looking at.</p></li>
+    <li><p class="step">Get the report. A calorie range, not a single number, with the assumptions that move it. Plus the ingredients worth knowing about, each one with its source.</p></li>
+    <li><p class="step">Read the verdict. Worth it or not, and why, in plain words. Then eat, or don't.</p></li>
+  </ol>
+</section>
+
+<section class="wrap" id="signup" aria-labelledby="join">
+  <div class="col">
+    <h2 id="price">What it will cost</h2>
+    <ul class="price">
+      <li><b>Free</b><span>Your first 3 reports.</span></li>
+      <li><b>$9 a month</b><span>After that. Photo every plate you want.</span></li>
+      <li><b>$5 once</b><span>No app needed. 20 worth-the-calories picks near your Costco.</span></li>
+    </ul>
+    <p class="fine">That's the plan, and plans can change. The waitlist is free and there's nothing to pay today.</p>
+  </div>
+  <div class="signup">
+    <h2 id="join">Get the first reports</h2>
+    <p>The app isn't out yet. Leave your email and where you are, and you'll hear from us when there's something to try.</p>
+    <p id="thanks" role="status" hidden>You're on the list. We'll email you when there's a report to open. Until then, enjoy your dinner.</p>
+    <form action="https://formspree.io/f/REPLACE_ME" method="POST">
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required autocomplete="email">
+      </div>
+      <fieldset>
+        <legend>Where are you?</legend>
+        <label class="radio"><input type="radio" name="location" value="United States" required> United States</label>
+        <label class="radio"><input type="radio" name="location" value="Outside the US"> Outside the US</label>
+      </fieldset>
+      <input type="hidden" name="utm_source">
+      <input type="hidden" name="utm_medium">
+      <input type="hidden" name="utm_campaign">
+      <input type="hidden" name="_subject" value="New Worth The Calories waitlist signup">
+      <div class="hp" aria-hidden="true"><label for="gotcha">Leave this empty</label><input id="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+      <button class="btn" type="submit">Put me on the list</button>
+      <p class="fine" id="err" role="alert" hidden>That didn't go through. Please try again in a minute.</p>
+      <p class="fine">You'll get an occasional email about Worth The Calories, launch news and early access, and you can unsubscribe any time.</p>
+      <p class="fine">We keep your email, your country and which link brought you here. Formspree stores the signups for us. We use them only for this waitlist and we never sell them.</p>
+    </form>
+  </div>
+</section>
+
+<section class="wrap" aria-label="From the founder">
+  <p class="founder">I'm one engineer in Bangalore who loves a rich plate and hates being handed a made-up number about it with a straight face. This is me building the report I wanted to read.</p>
+</section>
+</main>
+
+<footer class="wrap">
+  <p>Calorie figures on this page are estimates, with their assumptions and unknowns stated. Nothing here is medical advice.</p>
+  <p>Independent summaries of public statements. Sources linked. No affiliation or endorsement.</p>
+  <p class="close">Worth The Calories. Coming soon. Eat something good tonight.</p>
+</footer>
+
+<script>
+const q = new URLSearchParams(location.search);
+for (const k of ["utm_source", "utm_medium", "utm_campaign"]) {
+  if (q.has(k)) document.querySelector(`input[name=${k}]`).value = q.get(k);
+}
+const form = document.querySelector("form");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = form.querySelector("button"), err = document.getElementById("err");
+  btn.disabled = true;
+  err.hidden = true;
+  try {
+    const r = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+    if (!r.ok) throw new Error(r.status);
+    form.hidden = true;
+    document.getElementById("thanks").hidden = false;
+  } catch {
+    err.hidden = false;
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
