@@ -53,6 +53,8 @@ h1{
   font-size:clamp(2.7rem,min(1.2rem + 6vw,10.5vh),7.6rem);line-height:.98;letter-spacing:-.02em;font-weight:500;
   margin:0 0 1.5rem;max-width:6.8em;
 }
+.names{font-size:1rem;line-height:1.35;color:var(--linen-muted);margin:0 0 1.5rem}
+.names a{color:var(--ochre);text-underline-offset:.2em;white-space:nowrap}
 .soon{font-style:italic;color:var(--ochre);font-size:clamp(1.3rem,1rem + 1vw,1.9rem);margin:0 0 1.5rem}
 form{display:flex;gap:.6rem;flex-wrap:wrap;max-width:34rem}
 input[type=email]{
@@ -82,11 +84,12 @@ input[type=email]::placeholder{color:var(--linen-muted)}
 @media (max-height:920px){
   main{padding-block:clamp(12px,2.5vh,32px)}
   h1{margin-bottom:.8rem}
-  .soon{margin-bottom:1rem}
+  .names,.soon{margin-bottom:1rem}
   .share{margin-top:.8rem}
 }
 @media (max-height:760px){
   main{gap:1rem}
+  .fine,.count{margin-top:.5rem}
 }
 @media (max-height:680px){
   main{gap:.6rem}
@@ -103,6 +106,7 @@ input[type=email]::placeholder{color:var(--linen-muted)}
   <p class="mast">Worth The Calories</p>
   <div>
     <h1>Calorie counters are lying to you. Food scientists aren't.</h1>
+    <p class="names">Insights from the public videos and posts of <a href="https://www.youtube.com/watch?v=8ETN1lmMve4" target="_blank" rel="noopener">Layne Norton</a>, <a href="https://www.youtube.com/watch?v=pyuyakz6leo" target="_blank" rel="noopener">Gil Carvalho</a>, <a href="https://www.youtube.com/watch?v=IWCck4-_FhQ" target="_blank" rel="noopener">Paul Saladino</a>, <a href="https://www.youtube.com/watch?v=xF0OJh19Ubw" target="_blank" rel="noopener">Eric Berg</a> and <a href="https://drhyman.com/blogs/content/why-you-should-ditch-artificial-sweeteners" target="_blank" rel="noopener">Mark Hyman</a>, even where they disagree.</p>
     <p class="soon">Coming soon: a photo of your plate, and a straight verdict.</p>
     <p id="thanks" role="status" hidden>You're on the list. Eat something good tonight.</p>
     <form action="https://script.google.com/macros/s/AKfycbwvBmbjEiuh4wOX451l1BBfu5C3ta88Mi2poxx95xUlkVnPk6zrRBL3I5GJepUHKtVp/exec" method="POST">
