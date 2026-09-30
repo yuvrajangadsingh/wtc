@@ -169,9 +169,15 @@ form.addEventListener("submit", async (e) => {
   }
 });
 const share = document.getElementById("share");
-if (navigator.share) {
+if (navigator.share && matchMedia("(pointer: coarse)").matches) {
   share.hidden = false;
   share.onclick = () => navigator.share({ title: document.title, text: document.querySelector("h1").textContent, url: location.href }).catch(() => {});
+} else if (navigator.clipboard) {
+  share.hidden = false;
+  share.onclick = () => navigator.clipboard.writeText(location.href).then(() => {
+    share.textContent = "Link copied. Paste it to them.";
+    setTimeout(() => { share.textContent = "Send this to your calorie-counting friend"; }, 3000);
+  }).catch(() => {});
 }
 </script>
 </body>
